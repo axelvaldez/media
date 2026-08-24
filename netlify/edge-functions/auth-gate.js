@@ -1,5 +1,3 @@
-// Gates /admin/* (see netlify.toml). Deno runtime — this is why lib/auth.js
-// only uses Web Crypto rather than node:crypto, so it works unmodified here.
 import { verifySession } from "../../lib/auth.js";
 
 export default async (request, context) => {

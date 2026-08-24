@@ -8,9 +8,6 @@
   path = "/admin/*"
   function = "auth-gate"
 
-# Branded image URLs: media.axel.mx/images/... transparently proxies to
-# jsdelivr's GitHub CDN, so images are servable moments after a git push —
-# Netlify never deploys or gates the actual image bytes.
 [[redirects]]
   from = "/images/*"
   to = "https://cdn.jsdelivr.net/gh/axelvaldez/media@main/images/:splat"
