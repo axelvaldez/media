@@ -13,7 +13,7 @@
 # Netlify never deploys or gates the actual image bytes.
 [[redirects]]
   from = "/images/*"
-  to = "https://cdn.jsdelivr.net/gh/OWNER/REPO@main/images/:splat"
+  to = "https://cdn.jsdelivr.net/gh/axelvaldez/media@main/images/:splat"
   status = 200
   force = true
 
