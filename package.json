@@ -1,0 +1,11 @@
+{
+  "name": "media",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "hash-password": "node scripts/hash-password.js"
+  }
+}

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>media</title>
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1>media</h1>
+    <nav id="month-nav" class="month-nav" aria-label="Jump to month"></nav>
+    <a href="/.netlify/functions/logout" class="logout-link">Log out</a>
+  </header>
+
+  <section class="upload-panel">
+    <p class="notice">
+      Drag images anywhere on this page to stage them, or
+      <label for="file-input" class="file-picker-label">choose files</label>.
+      Saving pushes a commit to GitHub — this can take a few seconds.
+      Please don't close this tab until the page changes.
+    </p>
+    <form id="upload-form" method="post" enctype="multipart/form-data" action="/.netlify/functions/upload">
+      <input type="file" id="file-input" name="files" multiple accept="image/*" hidden>
+      <div id="upload-tray" class="tray"></div>
+      <button type="submit" id="upload-save" class="btn" hidden>Save</button>
+    </form>
+  </section>
+
+  <section class="delete-panel" id="delete-panel" hidden>
+    <p class="notice">
+      Deleting pushes a commit to GitHub — this can take a few seconds.
+      Please don't close this tab until the page changes.
+    </p>
+    <form id="delete-form" method="post" action="/.netlify/functions/delete">
+      <div id="delete-tray" class="tray"></div>
+      <button type="submit" class="btn btn-danger">Confirm delete</button>
+    </form>
+  </section>
+
+  <main id="gallery" aria-live="polite">
+    <p class="loading">Loading images…</p>
+  </main>
+
+  <div id="drop-overlay" class="drop-overlay" hidden>Drop to add images</div>
+
+  <div id="image-menu" class="image-menu" hidden>
+    <button type="button" data-action="copy">Copy URL</button>
+    <button type="button" data-action="delete">Delete</button>
+    <p class="image-menu-status" id="image-menu-status" hidden></p>
+  </div>
+
+  <script src="/assets/admin.js" defer></script>
+</body>
+</html>
