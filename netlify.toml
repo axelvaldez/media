@@ -1,6 +1,9 @@
 [build]
   publish = "public"
 
+[build.environment]
+  NODE_VERSION = "24.22.1"
+
 [functions]
   directory = "netlify/functions"
 
